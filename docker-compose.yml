@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    networks:
+      default:
+        aliases:
+          - postgres
+    environment:
+      - POSTGRES_PASSWORD=${PG_PASSWORD:-postgres}
